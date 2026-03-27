@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+.Map {
+  height: 500px;
+  width: 600px;
+  position: relative;
+}
+
+.SanJose {
+  fill: #a158dd
+}
+
+.Alajuela {
+  fill: #F87171
+}
+
+.Cartago {
+  fill: #56a2ff;
+}
+
+.Heredia {
+  fill: #f3ff50;
+}
+
+.Guanacaste {
+  fill: #4ADE80;
+}
+
+.Puntarenas {
+  fill: #FB923C;
+}
+
+.Limon {
+  fill: #5aee3c;
+}
+
+.provincia {
+  transition: filter .2s ease-out, transform .2s ease-out;
+  transform-origin: center;
+  transform-box: fill-box;
+  stroke: rgba(0, 0, 0, .3);
+}
+
+.provincia:hover {
+  cursor: pointer;
+  filter: brightness(1.1);
+  transform: scale(1.05);
+  filter: drop-shadow(3px 20px 1px #00000055);
+}
