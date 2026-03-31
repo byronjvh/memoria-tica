@@ -7,7 +7,7 @@ function App() {
 
   return (
     <>
-      <div className='max-h-125 flex justify-center items-center'>
+      <div className='h-140 flex justify-center items-center'>
         <Map />
       </div>
     </>
