@@ -4,21 +4,24 @@ import provincias from "../data/provincias.json"
 
 const VIEW_BOX_PROVINCE = {
     0: "scale(1) translate(-22.47px, -30px)",
-    1: "scale(2.6) translate(-380px, -320px)",
-    2: "scale(2.2) translate(-120px, -50px)",
-    3: "scale(3.6) translate(-520px, -315px)",
-    4: "scale(3.2) translate(-420px, -140px)",
-    5: "scale(1.8) translate(90px, 8px)",
-    6: "scale(1.25) translate(-180px, -245px)",
-    7: "scale(1.7) translate(-480px, -110px)"
+    1: "scale(2.6) translate(-80px, -15px)",
+    2: "scale(2.2) translate(140px, 220px)",
+    3: "scale(3.4) translate(-170px, 35px)",
+    4: "scale(3.2) translate(-90px, 200px)",
+    5: "scale(1.8) translate(300px, 225px)",
+    6: "scale(1.25) translate(-85px, -145px)",
+    7: "scale(1.7) translate(-285px, 90px)"
 }
 
 export default function Map({ updateSelected, selectedProvince = 0, className }) {
+    const isMobile = window.matchMedia("(pointer: coarse)").matches
     const [hoveredId, setHoveredId] = useState(null);
-    const orderedPaths = [
-        ...paths.filter(p => p.id !== hoveredId),
-        ...paths.filter(p => p.id === hoveredId),
-    ];
+    const orderedPaths = isMobile
+        ? paths
+        : [
+            ...paths.filter(p => p.id !== hoveredId),
+            ...paths.filter(p => p.id === hoveredId),
+        ];
 
     const handleClick = (e) => {
         e.stopPropagation()
@@ -52,8 +55,12 @@ export default function Map({ updateSelected, selectedProvince = 0, className })
                                     : "fade"
                                 : ""}`}
                             d={path.d}
-                            onMouseEnter={() => setHoveredId(path.id)}
-                            onMouseLeave={() => setHoveredId(null)}
+                            onMouseEnter={() => {
+                                if (!isMobile) setHoveredId(path.id)
+                            }}
+                            onMouseLeave={() => {
+                                if (!isMobile) setHoveredId(null)
+                            }}
                             data-province={path.id}
                         />
                     ))

@@ -10,6 +10,7 @@
 
 #CostaRica {
   transition: transform .5s ease-out;
+  transform-origin: center;
   will-change: transform;
 }
 
@@ -52,6 +53,13 @@
   cursor: pointer;
   filter: brightness(1.05) drop-shadow(3px 20px 1px #00000055);
   transform: scale(1.05);
+}
+
+@media (pointer: coarse) {
+  .provincia {
+    filter: none !important;
+    transform: none !important;
+  }
 }
 
 #CostaRica:has(.provincia.selected) .provincia:hover {
