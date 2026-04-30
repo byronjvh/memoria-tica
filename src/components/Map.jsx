@@ -3,14 +3,14 @@ import { paths } from "../MapPathArray"
 import provincias from "../data/provincias.json"
 
 const VIEW_BOX_PROVINCE = {
-    0: "scale(1) translate(-22.47 -30)",
-    1: "scale(2.6) translate(-380, -320)",
-    2: "scale(2.2) translate(-120, -50)",
-    3: "scale(3.6) translate(-520, -315)",
-    4: "scale(3.2) translate(-420, -140)",
-    5: "scale(1.8) translate(90, 8)",
-    6: "scale(1.25) translate(-180, -245)",
-    7: "scale(1.7) translate(-480, -110)"
+    0: "scale(1) translate(-22.47px, -30px)",
+    1: "scale(2.6) translate(-380px, -320px)",
+    2: "scale(2.2) translate(-120px, -50px)",
+    3: "scale(3.6) translate(-520px, -315px)",
+    4: "scale(3.2) translate(-420px, -140px)",
+    5: "scale(1.8) translate(90px, 8px)",
+    6: "scale(1.25) translate(-180px, -245px)",
+    7: "scale(1.7) translate(-480px, -110px)"
 }
 
 export default function Map({ updateSelected, selectedProvince = 0, className }) {
@@ -39,7 +39,9 @@ export default function Map({ updateSelected, selectedProvince = 0, className })
             viewBox="0 0 980 980"
             onClick={handleClick}
         >
-            <g id="CostaRica" transform={VIEW_BOX_PROVINCE[selectedProvince]}>
+            <g id="CostaRica" style={{
+                transform: VIEW_BOX_PROVINCE[selectedProvince]
+            }}>
                 {
                     orderedPaths.map(path => (
                         <path
