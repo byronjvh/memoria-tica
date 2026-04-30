@@ -1,9 +1,15 @@
 @import "tailwindcss";
 
 .Map {
-  height: 500px;
+  height: 100%;
   width: 100%;
+  max-width: 500px;
+  max-height: 500px;
   position: relative;
+}
+
+#CostaRica {
+  transition: transform .5s ease-out;
 }
 
 .SanJose {
@@ -35,7 +41,7 @@
 }
 
 .provincia {
-  transition: filter .2s ease-out, transform .2s ease-out;
+  transition: filter .2s ease-out, transform .2s ease-out, opacity .5s ease-in-out;
   transform-origin: center;
   transform-box: fill-box;
   stroke: rgba(0, 0, 0, .3);
@@ -43,7 +49,16 @@
 
 .provincia:hover {
   cursor: pointer;
-  filter: brightness(1.1);
+  filter: brightness(1.05) drop-shadow(3px 20px 1px #00000055);
   transform: scale(1.05);
-  filter: drop-shadow(3px 20px 1px #00000055);
+}
+
+.CostaRica:has(.provincia.selected) .provincia:hover {
+  cursor: unset;
+  filter: unset;
+  transform: scale(1);
+}
+
+.provincia.fade {
+  opacity: 0;
 }
