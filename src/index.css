@@ -60,6 +60,10 @@
     filter: none !important;
     transform: none !important;
   }
+
+  .Map {
+    shape-rendering: optimizeSpeed;
+  }
 }
 
 #CostaRica:has(.provincia.selected) .provincia:hover {
