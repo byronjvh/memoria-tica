@@ -35,8 +35,6 @@ export default function Map({ updateSelected, selectedProvince = 0, className })
         <svg
             id="Map"
             className={`Map ${className}`}
-            width={500}
-            height={500}
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 980 980"
             onClick={handleClick}
