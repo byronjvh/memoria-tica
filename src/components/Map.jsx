@@ -52,7 +52,6 @@ export default function Map({ updateSelected, selectedProvince = 0, className })
                                     : "fade"
                                 : ""}`}
                             d={path.d}
-                            onMouseOver={() => setHoveredId(path.id)}
                             onMouseEnter={() => setHoveredId(path.id)}
                             onMouseLeave={() => setHoveredId(null)}
                             data-province={path.id}
