@@ -1,12 +1,37 @@
 @import "tailwindcss";
 
+body {
+  background: #00c497;
+  background: linear-gradient(180deg, rgba(0, 196, 151, 1) 10%, rgba(255, 255, 255, 1) 80%);
+  background-repeat: no-repeat;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Space Grotesk", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+
+}
+
+h1 {
+  font-size: 36px;
+  max-width: 600px;
+  margin-inline: auto;
+  line-height: 1.0;
+}
+
 .Map {
   height: 100%;
   width: 100%;
-  max-width: 500px;
-  max-height: 500px;
+  max-width: 440px;
+  max-height: 440px;
   position: relative;
   shape-rendering: geometricPrecision;
+  /* stroke using filter drop shadow */
+  /* filter: drop-shadow(3px 20px 1px #00000055); */
+  filter: drop-shadow(2px 2px white) drop-shadow(2px -2px white) drop-shadow(-2px 2px white) drop-shadow(-2px -2px white);
 }
 
 #CostaRica {

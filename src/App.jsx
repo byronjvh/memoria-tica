@@ -17,7 +17,10 @@ function App() {
   return (
     <>
       <div className='hero w-full p-2' onClick={clickOutSide}>
-        <div className='max-w-125 max-h-125 mx-auto overflow-hidden flex justify-center items-center'>
+        <h1 className='text-center mt-8 mb-10 text-white'>
+          Descubre las imágenes más históricas de Costa Rica
+        </h1>
+        <div className='max-w-110 max-h-110 mx-auto overflow-hidden flex justify-center items-center'>
           <Map updateSelected={updateSelectedProvince} selectedProvince={selectedProvince} />
         </div>
       </div>
