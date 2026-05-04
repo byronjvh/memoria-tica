@@ -1,9 +1,17 @@
 @import "tailwindcss";
 
 body {
-  background: #00c497;
-  background: linear-gradient(180deg, rgba(0, 196, 151, 1) 10%, rgba(255, 255, 255, 1) 80%);
   background-repeat: no-repeat;
+  background:
+    radial-gradient(circle at top,
+      rgba(255, 255, 255, .18),
+      transparent 35%),
+    linear-gradient(180deg,
+      #18c6a6 0%,
+      #84d8d2 45%,
+      #edf4eb 100%);
+  min-height: 100svh;
+  backdrop-filter: blur(120px);
 }
 
 h1,
@@ -16,17 +24,24 @@ h3 {
 }
 
 h1 {
-  font-size: 36px;
-  max-width: 600px;
+  font-size: 32px;
   margin-inline: auto;
   line-height: 1.0;
+}
+
+p,
+a,
+button {
+  font-family: "Ubuntu", sans-serif;
+  font-optical-sizing: auto;
+
 }
 
 .Map {
   height: 100%;
   width: 100%;
-  max-width: 440px;
-  max-height: 440px;
+  max-width: 500px;
+  max-height: 500px;
   position: relative;
   shape-rendering: geometricPrecision;
   /* stroke using filter drop shadow */
