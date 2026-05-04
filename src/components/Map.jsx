@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { paths } from "../MapPathArray"
-import provincias from "../data/provincias.json"
 
 const VIEW_BOX_PROVINCE = {
-    0: "scale(1) translate(-22.47px, -30px)",
+    0: "scale(1) translate(0px, -30px)",
     1: "scale(2.6) translate(-80px, -15px)",
     2: "scale(2.2) translate(140px, 220px)",
     3: "scale(3.4) translate(-170px, 35px)",
@@ -39,7 +38,7 @@ export default function Map({ updateSelected, selectedProvince = 0, className })
             id="Map"
             className={`Map ${className}`}
             xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 980 980"
+            viewBox="0 0 1000 1000"
             onClick={handleClick}
         >
             <g id="CostaRica" style={{
