@@ -2,7 +2,7 @@ import { useState } from "react";
 import { paths } from "../MapPathArray"
 
 const VIEW_BOX_PROVINCE = {
-    0: "scale(1) translate(0px, -30px)",
+    0: "scale(1) translate(0px, -10px)",
     1: "scale(2.6) translate(-80px, -15px)",
     2: "scale(2.2) translate(140px, 220px)",
     3: "scale(3.4) translate(-170px, 35px)",
