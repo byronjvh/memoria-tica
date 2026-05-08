@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import Map from './components/Map'
-import { Arrow, Diamond, Search, User } from './components/icons'
+import { Arrow, Diamond, Search, User } from './components/Icons'
 import IconButton from './components/IconButton'
 
 function App() {
