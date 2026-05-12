@@ -26,7 +26,6 @@ export default function Map({ updateSelected, selectedProvince = 0, className })
         e.stopPropagation()
         const provinceId = Number(e.target.dataset.province)
         if (!provinceId) return updateSelected(0)
-        console.log(selectedProvince, provinceId)
         // si no había provincia seleccionada, la seleccionamos
         if (!selectedProvince) return updateSelected(provinceId)
         // si ya había provincia seleccionada y no coincide, la cerramos (volver a 0)
