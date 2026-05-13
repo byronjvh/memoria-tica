@@ -32,3 +32,9 @@ export function Diamond({ size = 24 }) {
         </svg>
     )
 }
+
+export function HorizontalLine({ size = 24 }) {
+    return (
+        <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none"><path d="M5 12H12H19" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" stroke-width="2" /></svg>
+    )
+}

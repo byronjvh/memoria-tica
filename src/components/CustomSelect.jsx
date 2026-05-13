@@ -131,12 +131,11 @@ export default function CustomSelect({
                 aria-expanded={open}
                 className="
                     flex w-full items-center justify-between
-                    rounded-2xl border border-white/10
-                    bg-white/5 px-4 py-3
-                    text-left text-white
+                    rounded-lg  bg-text-light border border-text-light px-4 py-3
+                    text-left text-text-dark font-bold cursor-pointer
                     backdrop-blur-md transition
-                    hover:bg-white/10
-                    focus:outline-none focus:ring-2 focus:ring-cyan-400
+                    hover:bg-text-light-soft
+                    focus:outline-none focus:ring-2 focus:ring-secondary-active
                 "
             >
                 <span>{selectedItem ? selectedItem.name : placeholder}</span>
@@ -149,8 +148,8 @@ export default function CustomSelect({
                 <ul
                     role="listbox"
                     className="
-                        absolute z-50 mt-2 w-full overflow-hidden rounded-2xl
-                        border border-white/10 bg-[#111827]/95 p-1
+                        absolute z-50 mt-2 w-full overflow-hidden rounded-lg
+                        border border-secondary-active bg-secondary p-1
                         shadow-2xl backdrop-blur-xl
                     "
                 >
@@ -163,10 +162,10 @@ export default function CustomSelect({
                         onMouseEnter={() => setHighlighted(0)}
                         onClick={() => handleSelect(0)}
                         className={`
-                            cursor-pointer rounded-xl px-4 py-3 transition-all duration-150
+                            cursor-pointer rounded-lg px-3 py-2 transition-all duration-150
                             ${highlighted === 0
-                                ? "bg-cyan-500/20 text-cyan-300"
-                                : "text-white/80 hover:bg-white/5"
+                                ? "bg-secondary-active text-text-light"
+                                : "text-text-light hover:bg-secondary-hover"
                             }
                         `}
                     >
@@ -188,10 +187,10 @@ export default function CustomSelect({
                                 onMouseEnter={() => setHighlighted(item.id)}
                                 onClick={() => handleSelect(item.id)}
                                 className={`
-                                    cursor-pointer rounded-xl px-4 py-3 transition-all duration-150
+                                    cursor-pointer rounded-lg px-3 py-2 transition-all duration-150
                                     ${active
-                                        ? "bg-cyan-500/20 text-cyan-300"
-                                        : "text-white/80 hover:bg-white/5"
+                                        ? "bg-secondary-active text-text-light"
+                                        : "text-text-light hover:bg-secondary-hover"
                                     }
                                 `}
                             >

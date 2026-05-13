@@ -1,5 +1,40 @@
 @import "tailwindcss";
 
+
+@theme {
+  /* Texto */
+  --color-text-light: #f8faf8;
+  --color-text-light-soft: #eaf4f1;
+  --color-text-dark: #17313b;
+  --color-text-muted: #4b6874;
+
+  /* Marca */
+  --color-primary: #0f766e;
+  --color-primary-hover: #0b5f59;
+
+  --color-accent: #f28c28;
+  --color-accent-hover: #de7b1d;
+
+  /* Secondary refinado */
+  --color-secondary: #6b78d6;
+
+  /* Variantes claras */
+  --color-secondary-hover: #7f8ae0;
+  --color-secondary-active: #93a0ea;
+
+  /* Bordes */
+  --color-border-main: #f8faf8;
+  --color-border-dark-soft: rgba(23, 49, 59, 0.16);
+
+  /* Sombras */
+  --shadow-soft: 0 8px 24px rgba(23, 49, 59, 0.08);
+  --shadow-floating: 0 16px 40px rgba(23, 49, 59, 0.16);
+}
+
+:root {
+  interpolate-size: allow-keywords;
+}
+
 body {
   background-repeat: no-repeat;
   background:
@@ -44,7 +79,7 @@ button {
   shape-rendering: geometricPrecision;
   /* stroke using filter drop shadow */
   /* filter: drop-shadow(3px 20px 1px #00000055); */
-  filter: drop-shadow(2px 2px white) drop-shadow(2px -2px white) drop-shadow(-2px 2px white) drop-shadow(-2px -2px white);
+  filter: drop-shadow(2px 2px var(--color-text-light)) drop-shadow(2px -2px var(--color-text-light)) drop-shadow(-2px 2px var(--color-text-light)) drop-shadow(-2px -2px var(--color-text-light));
 }
 
 #CostaRica {
@@ -85,7 +120,7 @@ button {
   transition: filter .2s ease-out, transform .2s ease-out, opacity .5s ease-in-out;
   transform-origin: center;
   transform-box: fill-box;
-  stroke: rgba(0, 0, 0, .3);
+  stroke: rgba(0, 0, 0, .5);
 }
 
 .provincia:hover {
@@ -114,3 +149,5 @@ button {
 .provincia.fade {
   opacity: 0;
 }
+
+.province-preview {}
