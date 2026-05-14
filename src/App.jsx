@@ -31,13 +31,13 @@ function App() {
       <div className='h-[90svh]'>
         <Header />
         <div className='hero'>
-          <div className='flex max-w-250 mx-auto pt-10 px-2 justify-between'>
-            <div className='flex-1 max-w-104 max-h-125 flex flex-col pt-4 gap-4' >
+          <div className='flex max-w-250 mx-auto px-2 justify-between'>
+            <div className={`flex-1 max-w-104 max-h-120.5 flex flex-col pt-4 gap-4 place-self-center transition-all duration-500 ease-out ${selectedProvince ? "pb-0" : "pb-10"}`} >
               <div className='flex flex-col gap-2'>
                 <h1 className='text-balance text-text-light'>
                   Descubre las memorias visuales de Costa Rica
                 </h1>
-                <p className='text-text-muted text-lg'>
+                <p className='text-text-light-soft text-lg leading-6'>
                   Imágenes, lugares y memorias organizadas por provincia y cantón.
                 </p>
               </div>
@@ -47,9 +47,9 @@ function App() {
               </div>
               <div className={
                 `
-                  ${selectedProvince ? "h-max p-3 bg-text-light" : "h-4.5 px-2 py-1 border-border-main bg-text-light-soft/45"} flex flex-col w-full justify-start overflow-hidden rounded-lg 
-                  
-                  border-2 border-border-main
+                  ${selectedProvince ? "h-max p-4" : "h-4.5 px-2 py-1 "} flex flex-col w-full justify-start overflow-hidden rounded-lg 
+                  border-border-main bg-text-light-soft/45
+                  border-2
                   transition-all duration-500 ease-out gap-2
                   province-preview
                 
@@ -61,11 +61,11 @@ function App() {
                 </div>
 
                 <div className=''>
-                  <div className='mb-3 border-b-2 border-primary/20'>
-                    <h3 className='text-text-dark text-sm '>Archivo histórico</h3>
+                  <div className='mb-4 border-b-2 border-text-light-soft'>
+                    <h3 className='text-text-dark text-sm pb-2 uppercase tracking-wide'>Archivo histórico</h3>
                   </div>
                   <div className='flex items-center gap-3'>
-                    <img className='aspect-video object-cover w-48 overflow-hidden rounded-lg' src="https://cdn.viralagenda.com/images/events/c2f9af0c265a95474071537154fac1d2-large.jpg" alt={`${selectedCanton}, ${selectedProvince} miniatura`} />
+                    <img className='aspect-video object-cover w-50 overflow-hidden rounded-lg' src="https://cdn.viralagenda.com/images/events/c2f9af0c265a95474071537154fac1d2-large.jpg" alt={`${selectedCanton}, ${selectedProvince} miniatura`} />
                     <ul className='flex flex-col gap-1'>
                       <li className='flex gap-1 items-center'><HorizontalLine size={18} /> 84 memorias</li>
                       <li className='flex gap-1 items-center'><HorizontalLine size={18} /> Desde 1932</li>

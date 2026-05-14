@@ -73,13 +73,14 @@ button {
 .Map {
   height: 100%;
   width: 100%;
-  max-width: 500px;
-  max-height: 500px;
+  max-width: 600px;
+  max-height: 482px;
   position: relative;
   shape-rendering: geometricPrecision;
   /* stroke using filter drop shadow */
   /* filter: drop-shadow(3px 20px 1px #00000055); */
-  filter: drop-shadow(2px 2px var(--color-text-light)) drop-shadow(2px -2px var(--color-text-light)) drop-shadow(-2px 2px var(--color-text-light)) drop-shadow(-2px -2px var(--color-text-light));
+  filter:
+    drop-shadow(2px 2px var(--color-text-light)) drop-shadow(2px -2px var(--color-text-light)) drop-shadow(-2px 2px var(--color-text-light)) drop-shadow(-2px -2px var(--color-text-light)) saturate(0.7) brightness(1.05);
 }
 
 #CostaRica {
