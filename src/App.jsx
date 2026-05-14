@@ -7,6 +7,7 @@ import { paths as provinces } from "./MapPathArray"
 import cantons from "./data/cantones.json"
 import PrimaryButton from './components/PrimaryButton'
 import Header from './components/Header'
+import BackgroundOverlay from './components/BackgroundOverlay'
 
 function App() {
   const [selectedProvince, setSelectedProvince] = useState(0)
@@ -45,6 +46,7 @@ function App() {
                 <CustomSelect list={provinceList} updateSelected={updateSelectedProvince} selected={selectedProvince} />
                 <CustomSelect list={filteredCantons} updateSelected={updateSelectedCanton} selected={selectedCanton} placeholder='Cantón' />
               </div>
+              <BackgroundOverlay />
               <div className={
                 `
                   ${selectedProvince ? "h-max p-4" : "h-4.5 px-2 py-1 "} flex flex-col w-full justify-start overflow-hidden rounded-lg 
@@ -52,8 +54,8 @@ function App() {
                   border-2
                   transition-all duration-500 ease-out gap-2
                   province-preview
-                
-                `
+                  
+                  `
               }>
                 <div className={`${selectedProvince ? "hidden" : "flex"} gap-2`}>
                   <div className="h-1.5 w-24 rounded-full bg-text-light/80" />
@@ -73,7 +75,6 @@ function App() {
                     </ul>
                   </div>
                 </div>
-
 
               </div>
               <PrimaryButton>

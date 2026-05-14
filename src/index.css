@@ -38,13 +38,14 @@
 body {
   background-repeat: no-repeat;
   background:
-    radial-gradient(circle at top,
-      rgba(255, 255, 255, .18),
-      transparent 35%),
-    linear-gradient(180deg,
-      #18c6a6 0%,
-      #84d8d2 45%,
-      #edf4eb 100%);
+    radial-gradient(circle at top left,
+      rgba(255, 255, 255, .3),
+      transparent 26%),
+
+    linear-gradient(135deg,
+      #18bea7 0%,
+      #32cbb8 42%,
+      #72d7dc 100%);
   min-height: 100svh;
   backdrop-filter: blur(120px);
 }
