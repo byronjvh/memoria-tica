@@ -150,7 +150,8 @@ export default function CustomSelect({
                     className="
                         absolute z-50 mt-2 w-full overflow-hidden rounded-lg
                         border border-secondary-active bg-secondary p-1
-                        shadow-2xl backdrop-blur-xl
+                        shadow-2xl backdrop-blur-xl max-h-74.5 overflow-y-auto
+                        custom-select-scroll
                     "
                 >
                     <li

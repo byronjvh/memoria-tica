@@ -1,5 +1,4 @@
 export default function Palm({
-    size = 420,
     color = "currentColor",
     opacity = 1,
     className = "",
@@ -8,8 +7,6 @@ export default function Palm({
     return (
         <svg
             viewBox="0 0 1000 1000"
-            width={size}
-            height={size}
             className={className}
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"

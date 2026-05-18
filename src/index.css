@@ -152,4 +152,103 @@ button {
   opacity: 0;
 }
 
-.province-preview {}
+
+.background-overlay {
+  mask-image:
+    linear-gradient(to bottom,
+      rgba(0, 0, 0, .7),
+      transparent);
+}
+
+.custom-select-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(248, 250, 248, 0.55) transparent;
+}
+
+.custom-select-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-select-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-select-scroll::-webkit-scrollbar-thumb {
+  background: rgba(248, 250, 248, 0.55);
+  border-radius: 999px;
+  transition: background 0.2s ease;
+}
+
+.custom-select-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(248, 250, 248, 0.8);
+}
+
+.map-radar-effect {
+  position: absolute;
+  inset: 0;
+  z-index: -10;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  pointer-events: none;
+}
+
+.radar-base {
+  position: absolute;
+
+  width: 26rem;
+  height: 26rem;
+
+  border-radius: 999px;
+
+  background: rgba(248, 250, 248, 0.045);
+
+  border: 1.5px solid rgba(248, 250, 248, 0.4);
+
+  box-shadow:
+    inset 0 0 0 1px rgba(248, 250, 248, 0.08),
+    0 0 18px rgba(248, 250, 248, 0.08);
+}
+
+.radar-inner-ring {
+  position: absolute;
+
+  width: 20rem;
+  height: 20rem;
+
+  border-radius: 999px;
+
+  border: 1px solid rgba(248, 250, 248, 0.3);
+}
+
+.radar-pulse {
+  position: absolute;
+
+  width: 9rem;
+  height: 9rem;
+
+  border-radius: 999px;
+
+  border: 1.5px solid rgba(230, 255, 197, 0.6);
+  background-color: rgba(230, 255, 197, 0.4);
+
+  animation: radarPulse 4.4s ease-out infinite;
+}
+
+@keyframes radarPulse {
+  0% {
+    transform: scale(0.25);
+    opacity: 0;
+  }
+
+  18% {
+    opacity: 0.55;
+  }
+
+  100% {
+    transform: scale(2.9);
+    opacity: 0;
+  }
+}

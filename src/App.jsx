@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import './App.css'
 import Map from './components/Map'
 import { Arrow, HorizontalLine } from './components/Icons'
@@ -30,9 +30,11 @@ function App() {
   return (
     <>
       <div className='h-[90svh]'>
+        <BackgroundOverlay className='background-overlay absolute left-0 top-0 h-full text-text-dark/20 -z-10' />
+        <BackgroundOverlay className='background-overlay absolute right-0 top-0 -scale-x-100 h-full text-text-dark/20 -z-10' />
         <Header />
-        <div className='hero'>
-          <div className='flex max-w-250 mx-auto px-2 justify-between'>
+        <div className='hero px-2'>
+          <div className='flex max-w-250 mx-auto justify-between'>
             <div className={`flex-1 max-w-104 max-h-120.5 flex flex-col pt-4 gap-4 place-self-center transition-all duration-500 ease-out ${selectedProvince ? "pb-0" : "pb-10"}`} >
               <div className='flex flex-col gap-2'>
                 <h1 className='text-balance text-text-light'>
@@ -46,7 +48,6 @@ function App() {
                 <CustomSelect list={provinceList} updateSelected={updateSelectedProvince} selected={selectedProvince} />
                 <CustomSelect list={filteredCantons} updateSelected={updateSelectedCanton} selected={selectedCanton} placeholder='Cantón' />
               </div>
-              <BackgroundOverlay />
               <div className={
                 `
                   ${selectedProvince ? "h-max p-4" : "h-4.5 px-2 py-1 "} flex flex-col w-full justify-start overflow-hidden rounded-lg 
@@ -81,11 +82,19 @@ function App() {
                 Explorar museo digital <Arrow size={22} />
               </PrimaryButton>
             </div>
-            <div className='flex-1 max-w-125 max-h-125 overflow-hidden flex justify-center items-center' onClick={clickOutSide}>
+            <div className='flex-1 max-w-125 max-h-125 overflow-hidden flex justify-center items-center relative' onClick={clickOutSide}>
               <Map updateSelected={updateSelectedProvince} selectedProvince={selectedProvince} />
+              <div className="map-radar-effect">
+                <div className="radar-base" />
+                <div className="radar-inner-ring" />
+                <div className="radar-pulse" />
+              </div>
+
             </div>
           </div>
-          <div className='h-20 w-128 bg-amber-200 mx-auto mt-24'>Esto será publicidad</div>
+          <div className='max-w-240 min-h-22.5 sm:w-[calc(100% - 32px)] mx-auto mt-16 bg-amber-50'>
+            publicidad
+          </div>
         </div>
       </div>
     </>
