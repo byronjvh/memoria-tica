@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import Map from './components/Map'
 import { Arrow, HorizontalLine } from './components/Icons'
@@ -8,6 +8,7 @@ import cantons from "./data/cantones.json"
 import PrimaryButton from './components/PrimaryButton'
 import Header from './components/Header'
 import BackgroundOverlay from './components/BackgroundOverlay'
+import { supabase } from './lib/supabase'
 
 function App() {
   const [selectedProvince, setSelectedProvince] = useState(0)
@@ -15,6 +16,77 @@ function App() {
   const provinceList = provinces.map(el => ({ name: el.name, id: el.id }))
   const cantonList = Object.entries(cantons).map(el => ({ id: el[0], name: el[1].Nombre, province: el[1].Provincia, population: el[1]['Pop. (2008)'], area: el[1]['Área (km2)'] }))
   const filteredCantons = cantonList.filter(el => Number(el.province) === Number(selectedProvince))
+  const [session, setSession] = useState(null)
+  const [user, setUser] = useState(null)
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    async function loadSession() {
+      const result = await supabase.auth.getSession();
+
+      if (result.data?.session && result.data?.session.user) {
+        setSession(result.data.session);
+        setUser(result.data.session.user);
+      }
+
+      setLoading(false);
+    }
+
+    loadSession();
+  }, []);
+
+  async function handleSignIn() {
+    const email = prompt("Correo");
+    const password = prompt("Contraseña");
+
+    if (!email || !password) return;
+
+    const result = await supabase.auth.signInWithPassword({
+      email,
+      password,
+    });
+
+    if (result.error) {
+      alert(result.error.message);
+      return;
+    }
+
+    const sessionResult = await supabase.auth.getSession();
+
+    setSession(sessionResult.data.session);
+    setUser(sessionResult.data.session.user);
+  }
+
+  async function handleSignUp() {
+    const email = prompt("Correo");
+    const password = prompt("Contraseña");
+
+    if (!email || !password) return;
+
+    const result = await supabase.auth.signUp({
+      name: email.split("@")[0] || "User",
+      email,
+      password,
+    });
+
+    if (result.error) {
+      alert(result.error.message);
+      return;
+    }
+
+    const sessionResult = await supabase.auth.getSession();
+
+    setSession(sessionResult.data.session);
+    setUser(sessionResult.data.session.user);
+  }
+
+  async function handleSignOut() {
+    await supabase.signOut();
+
+    setSession(null);
+    setUser(null);
+  }
+
   const updateSelectedProvince = (num) => {
     setSelectedProvince(num)
   }

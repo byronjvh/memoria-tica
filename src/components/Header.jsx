@@ -1,7 +1,11 @@
+import { useAuth } from "../context/AuthContext";
 import IconButton from "./IconButton";
 import { Diamond, Search, User } from "./Icons";
 
 export default function Header() {
+    const { user, profile } = useAuth()
+
+    const username = profile?.name || "Visitante";
     return (
         <header>
             <div className='max-w-260 mx-auto py-4 px-2 flex justify-between rounded-lg items-center mb-4'>
@@ -18,7 +22,7 @@ export default function Header() {
                         <Diamond /> Mis joyitas
                     </IconButton>
                     <IconButton>
-                        <User />Byron
+                        <User />{username}
                     </IconButton>
                 </div>
             </div>
