@@ -101,7 +101,7 @@ function App() {
 
   return (
     <>
-      <div className='h-[90svh]'>
+      <div className='h-[85svh]'>
 
         <Header />
         <div className='hero px-2'>
@@ -122,7 +122,7 @@ function App() {
               <div className={
                 `
                   ${selectedProvince ? "h-max p-4" : "h-4.5 px-2 py-1 "} flex flex-col w-full justify-start overflow-hidden rounded-lg 
-                  border-border-main bg-text-light-soft/45
+                  border-border-main bg-text-light/40 backdrop-blur-xl
                   border-2
                   transition-all duration-500 ease-out gap-2
                   province-preview
@@ -130,17 +130,17 @@ function App() {
                   `
               }>
                 <div className={`${selectedProvince ? "hidden" : "flex"} gap-2`}>
-                  <div className="h-1.5 w-24 rounded-full bg-text-light/80" />
-                  <div className="h-1.5 w-12 rounded-full bg-text-light/50" />
+                  <div className="h-1.5 w-24 rounded-full bg-text-light/90" />
+                  <div className="h-1.5 w-12 rounded-full bg-text-light/60" />
                 </div>
 
                 <div className=''>
-                  <div className='mb-4 border-b-2 border-text-light-soft'>
-                    <h3 className='text-text-dark text-sm pb-2 uppercase tracking-wide'>Archivo histórico</h3>
+                  <div className='mb-4 border-b-2 border-text-muted/30'>
+                    <h3 className='text-text-muted text-sm pb-2 uppercase tracking-wide'>Archivo histórico</h3>
                   </div>
                   <div className='flex items-center gap-3'>
                     <img className='aspect-video object-cover w-50 overflow-hidden rounded-lg' src="https://cdn.viralagenda.com/images/events/c2f9af0c265a95474071537154fac1d2-large.jpg" alt={`${selectedCanton}, ${selectedProvince} miniatura`} />
-                    <ul className='flex flex-col gap-1'>
+                    <ul className='flex flex-col gap-1 text-text-dark'>
                       <li className='flex gap-1 items-center'><HorizontalLine size={18} /> 84 memorias</li>
                       <li className='flex gap-1 items-center'><HorizontalLine size={18} /> Desde 1932</li>
                       <li className='flex gap-1 items-center'><HorizontalLine size={18} /> 8 cantones</li>
@@ -166,6 +166,12 @@ function App() {
           <div className='max-w-240 min-h-22.5 sm:w-[calc(100% - 32px)] mx-auto mt-16 bg-amber-50'>
             publicidad
           </div>
+        </div>
+      </div>
+      <div className='w-full max-w-250 mx-auto flex flex-col gap-1'>
+        <h3 className='uppercase tracking-wide text-text-dark'>Memorias Destacadas</h3>
+        <div className='border-2 border-text-light h-32 rounded-xl bg-text-light-soft/50'>
+
         </div>
       </div>
     </>
