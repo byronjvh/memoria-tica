@@ -102,8 +102,7 @@ function App() {
   return (
     <>
       <div className='h-[90svh]'>
-        <BackgroundOverlay className='background-overlay absolute left-0 top-0 h-full text-text-dark/20 -z-10' />
-        <BackgroundOverlay className='background-overlay absolute right-0 top-0 -scale-x-100 h-full text-text-dark/20 -z-10' />
+
         <Header />
         <div className='hero px-2'>
           <div className='flex max-w-250 mx-auto justify-between'>

@@ -38,3 +38,21 @@ export function HorizontalLine({ size = 24 }) {
         <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none"><path d="M5 12H12H19" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" /></svg>
     )
 }
+
+export function User2({ size = 24, className }) {
+    return (
+        <svg xmlns="http://www.w3.org/2000/svg" className={className} width={size} height={size} viewBox="0 0 24 24" fill="none">
+            <path d="M17 8C17 10.7614 14.7614 13 12 13C9.23858 13 7 10.7614 7 8C7 5.23858 9.23858 3 12 3C14.7614 3 17 5.23858 17 8Z" stroke="#323232" strokeWidth="2" />
+            <path d="M3 21C3.95728 17.9237 6.41998 17 12 17C17.58 17 20.0427 17.9237 21 21" stroke="#323232" strokeWidth="2" strokeLinecap="round" />
+        </svg>
+    )
+}
+export function Logout({ size = 24, className }) {
+    return (
+        <svg xmlns="http://www.w3.org/2000/svg" className={className} width={size} height={size} viewBox="0 0 24 24" fill="none">
+            <path d="M21 12L13 12" stroke="#323232" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M18 15L20.913 12.087V12.087C20.961 12.039 20.961 11.961 20.913 11.913V11.913L18 9" stroke="#323232" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M16 5V4.5V4.5C16 3.67157 15.3284 3 14.5 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H14.5C15.3284 21 16 20.3284 16 19.5V19.5V19" stroke="#323232" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+    )
+}

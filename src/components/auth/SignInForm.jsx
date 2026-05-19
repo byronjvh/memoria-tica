@@ -46,7 +46,7 @@ export default function SignInForm() {
                 placeholder="Correo electrónico"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="rounded-2xl border border-border-dark-soft px-4 py-3 outline-none focus:ring-2 focus:ring-secondary"
+                className="rounded-lg border border-border-dark-soft px-4 py-3 outline-none focus:ring-2 focus:ring-secondary"
                 required
             />
 
@@ -55,13 +55,13 @@ export default function SignInForm() {
                 placeholder="Contraseña"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="rounded-2xl border border-border-dark-soft px-4 py-3 outline-none focus:ring-2 focus:ring-secondary"
+                className="rounded-lg border border-border-dark-soft px-4 py-3 outline-none focus:ring-2 focus:ring-secondary"
                 required
             />
 
             <button
                 disabled={loading}
-                className="rounded-2xl bg-accent px-5 py-3 font-bold text-text-light hover:bg-accent-hover disabled:opacity-60"
+                className="rounded-lg bg-accent px-4 py-3 font-bold text-text-light hover:bg-accent-hover disabled:opacity-60 cursor-pointer"
             >
                 {loading ? "Ingresando..." : "Iniciar sesión"}
             </button>

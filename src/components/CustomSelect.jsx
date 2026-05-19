@@ -49,12 +49,6 @@ export default function CustomSelect({
         setOpen(false);
     }
 
-    console.log({
-        selected,
-        selectedType: typeof selected,
-        listIds: list.map(item => item.id),
-        selectedItem
-    });
     function moveHighlight(direction) {
         const ids = [0, ...list.map((item) => item.id)];
         const currentIndex = ids.indexOf(highlighted);
